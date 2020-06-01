@@ -1,10 +1,10 @@
 //jshint esversion:8
-function generateMarkdown(data) {
+function generateMarkdown(userData, questionData) {
     return `
    ![GitHub Activity](https://img.shields.io/github/commit-activity/m/dhreeves/Node-Profile-Generator?style=flat-square)
   
    
-  # ${data.userName}  
+  # ${data.login}  
   # ${data.title}
   * ${data.description}
   ## __Table of Contents__  
@@ -27,7 +27,7 @@ function generateMarkdown(data) {
   ## __FAQ__ :                      
   * ${data.faq}
   ## Team Members
-<img align="left" src="${res[0].data.avatar_url}" width=96> &nbsp;${res[0].data.name} <br>&nbsp;<${data.uEmail}><br>&nbsp;<${res[0].data.location}>
+<img align="left" src="${data.avatar_url}" width=96> &nbsp;${res[0].data.name} <br>&nbsp;<${data.uEmail}><br>&nbsp;<${res[0].data.location}>
 <br>
 `;
 }

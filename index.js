@@ -2,8 +2,8 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const axios = require("axios");
-const api = require("userApi");
-const markdown = require("generateMarkdown");
+const api = require("./userApi.js");
+const markdown = require("./generateMarkdown");
 const filename = "README.md";
 
 const questions = [
@@ -56,28 +56,27 @@ const questions = [
         message: "Add test info."
     },
 
-    {
-        type: "editor",
-        name: "faq",
-        message: "Add FAQ to text editor and save."
-    },
-
 ];
 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, function (err) {
-        if (err) throw "You made an Error";
+        if (err) throw ("You made an Error");
     });
 }
 
 function init() {
     return inquirer.prompt(questions)
         .then(function (answers) {
-            markdown(answers);
-            const userMdown = markdown(answers);
-            api.getUser(answers.username);
-            writeToFile(`${answers.fileName}.md`, userMdown);
-            console.log("Success!");
+
+
+            api.getUser(answers.userName).then(function (data) {
+                let newUser = data;
+                console.log(newUser.data);
+                let userMdown = markdown(newUser, answers)
+                writeToFile(`${answers.username}.md`, userMdown);
+                console.log("Success!");
+            });
+
         })
         .catch(function (err) {
             console.log(err);
@@ -87,3 +86,5 @@ function init() {
 }
 
 init();
+
+

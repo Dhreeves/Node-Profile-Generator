@@ -7,4 +7,4 @@ const api = {
     }
 };
 
-module.exports = userApi;
+module.exports = api;

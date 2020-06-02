@@ -4,7 +4,7 @@ const inquirer = require("inquirer");
 const axios = require("axios");
 const api = require("./userApi.js");
 const markdown = require("./generateMarkdown");
-const filename = "README.md";
+const fileName = "README.md";
 
 const questions = [
     {
@@ -72,8 +72,8 @@ function init() {
             api.getUser(answers.userName).then(function (data) {
                 let newUser = data;
                 console.log(newUser.data);
-                let userMdown = markdown(newUser, answers)
-                writeToFile(`${answers.username}.md`, userMdown);
+                let userMdown = markdown(newUser, answers);
+                writeToFile(`${answers.userName}.md`, userMdown);
                 console.log("Success!");
             });
 

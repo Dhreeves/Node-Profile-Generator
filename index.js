@@ -5,8 +5,10 @@ const axios = require("axios");
 const api = require("./userApi.js");
 const markdown = require("./generateMarkdown");
 const fileName = "README.md";
+const path = require('path');
 
 const questions = [
+
     {
         type: "input",
         name: "userName",
@@ -56,9 +58,17 @@ const questions = [
         message: "Add test info."
     },
 
+    {
+        type: "input",
+        name: "faq",
+        message: "Are Readme files helpful?"
+    },
+
 ];
 
 function writeToFile(fileName, data) {
+
+    console.log(path.join(process.cwd(), fileName))
     fs.writeFile(fileName, data, function (err) {
         if (err) throw ("You made an Error");
     });
@@ -72,8 +82,8 @@ function init() {
             api.getUser(answers.userName).then(function (data) {
                 let newUser = data;
                 console.log(newUser.data);
-                let userMdown = markdown(newUser, answers);
-                writeToFile(`${answers.userName}.md`, userMdown);
+                let userMdown = markdown(newUser.data, answers);
+                writeToFile("README.md", userMdown);
                 console.log("Success!");
             });
 

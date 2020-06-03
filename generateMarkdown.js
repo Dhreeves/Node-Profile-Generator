@@ -4,9 +4,9 @@ function generateMarkdown(userData, questionData) {
    ![GitHub Activity](https://img.shields.io/github/commit-activity/m/dhreeves/Node-Profile-Generator?style=flat-square)
   
    
-  # ${data.login}  
-  # ${data.title}
-  * ${data.description}
+  # ${userData.login}  
+  # ${questionData.title}
+  * ${questionData.description}
   ## __Table of Contents__  
   * [Installation](#installation)               
   * [Usage](#usage)                    
@@ -15,19 +15,20 @@ function generateMarkdown(userData, questionData) {
   * [Test](#test)
   * [faq](#faq)    
   ## __Installation__ :               
-  * ${data.installation}
+  * ${questionData.installation}
   ## __Usage__ :                   
-  * ${data.usage}
+  * ${questionData.usage}
   ## __License__ :                    
-  * ${data.license}
+  * ${questionData.license}
   ## __Contributor__ :              
-  * ${data.contributor}
+  * ${questionData.contributor}
   ## __Test__ :                      
-  * ${data.tests}
-  ## __FAQ__ :                      
-  * ${data.faq}
+  * ${questionData.tests}
+  ## __FAQ__ : 
+ __Are README files helpful?__                      
+  * ${questionData.faq}
   ## Team Members
-<img align="left" src="${data.avatar_url}" width=96> &nbsp;${res[0].data.name} <br>&nbsp;<${data.uEmail}><br>&nbsp;<${res[0].data.location}>
+<img align="left" src="${userData.avatar_url}" width=96> &nbsp;${userData.name} <br>&nbsp;<${userData.email}><br>&nbsp;<${userData.location}>
 <br>
 `;
 }

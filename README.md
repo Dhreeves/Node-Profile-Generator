@@ -4,7 +4,8 @@
    
   # Dhreeves  
   # Node Profile Generator
-  * This project generates a readme file.
+  # dianehreeves@gmail.com
+  * Project generates a readme file
   ## __Table of Contents__  
   * [Installation](#installation)               
   * [Usage](#usage)                    
@@ -15,7 +16,7 @@
   ## __Installation__ :               
   * NPM, Axios, Inquirer
   ## __Usage__ :                   
-  * Usage includes node.js and learning more backend web development.
+  * Learning more backend web development.
   ## __License__ :                    
   * MIT
   ## __Contributor__ :              
@@ -24,7 +25,7 @@
   * NPM testing
   ## __FAQ__ : 
  __Are README files helpful?__                      
-  * Yes
+  * YES
   ## Team Members
 <img align="left" src="https://avatars2.githubusercontent.com/u/34249881?v=4" width=96> &nbsp;Diane Reeves <br>&nbsp;<null><br>&nbsp;<Dallas, Texas>
 <br>

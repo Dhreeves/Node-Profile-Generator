@@ -1,11 +1,12 @@
 //jshint esversion:8
 function generateMarkdown(userData, questionData) {
-    return `
+  return `
    ![GitHub Activity](https://img.shields.io/github/commit-activity/m/dhreeves/Node-Profile-Generator?style=flat-square)
   
    
   # ${userData.login}  
   # ${questionData.title}
+  # ${questionData.email}
   * ${questionData.description}
   ## __Table of Contents__  
   * [Installation](#installation)               

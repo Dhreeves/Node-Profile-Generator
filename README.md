@@ -16,7 +16,7 @@
   ## __Installation__ :               
   * NPM, Axios, Inquirer
   ## __Usage__ :                   
-  * Learning more backend web development.
+  * more practice with backend web development.
   ## __License__ :                    
   * MIT
   ## __Contributor__ :              
